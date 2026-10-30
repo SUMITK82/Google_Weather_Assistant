@@ -42,7 +42,7 @@ The assistant is designed for fast, helpful responses while keeping the interfac
 ├── tool.py             # Search and weather tools
 ├── pyproject.toml      # Python dependencies
 ├── uv.lock             # Lockfile for reproducible installs
-├── .env                # Local environment variables (not committed)
+├── .env.example        # Environment variable template (committed)
 ├── .gitignore          # Ignored files and secrets
 └── README.md           # Project documentation
 ```
@@ -58,7 +58,7 @@ Before running the project, make sure you have:
 
 ## Environment Setup
 
-Create a `.env` file in the project root with the following variables:
+Copy `.env.example` to `.env` in the project root, then add your API keys:
 
 ```env
 GOOGLE_API_KEY=your_google_api_key
@@ -67,10 +67,13 @@ WEATHER_API_KEY=your_openweather_api_key
 GEMINI_MODEL=gemini-3.5-flash-lite
 ```
 
-Important:
+The `.env` file is local-only and ignored by Git. Commit `.env.example` as the safe template, never `.env` or real API keys.
 
-- Keep your `.env` file local and never commit it to version control.
-- Store all API keys in a secure environment or secret manager for production use.
+```bash
+cp .env.example .env
+```
+
+For production, store API keys in a secure environment or secrets manager.
 
 ## Installation
 
@@ -151,4 +154,6 @@ Contributions are welcome. If you want to improve the project:
 
 ## Contact
 
-For questions, improvements, or collaboration opportunities, reach out through the project repository or maintainers.
+**Author:** SUMIT KUMAR
+
+**Email:** [kumarsumit20050512@gmail.com](mailto:kumarsumit20050512@gmail.com)
